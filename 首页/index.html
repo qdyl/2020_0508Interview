@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- 头部：swiper轮播 -->
+    <header class="swiper-container index_header">
+        <div class="swiper-wrapper header-slick">
+            <div class="swiper-slide slick-item"><a href="##" class="slick-link"><img src="images/banner1.jpg" alt=""></a></div>
+            <div class="swiper-slide slick-item"><a href="##" class="slick-link"><img src="images/banner2.jpg" alt=""></a></div>
+            <div class="swiper-slide slick-item"><a href="##" class="slick-link"><img src="images/banner4.jpg" alt=""></a></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </header>
+
+    <!-- 主体 -->
+    <main class="index_main">
+        <ul class="main-list">
+            <li class="list-item-4 list-item "><a href="##" class="main-item-link"><p>社会招聘</p></span><i class="icon"></i></a></li>
+            <li class="list-item-4 list-item "><a href="##" class="main-item-link"><p>校园招聘</p><i class="icon"></i></a></li>
+            <li class="list-item-4 list-item "><a href="##" class="main-item-link"><p>内部推荐</p><i class="icon"></i></a></li>
+            <li class="list-item-8 list-item "><a href="company.html" class="main-item-link"><img src="./images/banner1.jpg" alt=""></a></li>
+            <li class="list-item-4 list-item "><a href="##" class="main-item-link"><p>个人中心</p><i class="icon"></i></a></li>
+            <li class="list-item-4 list-item "><a href="##" class="main-item-link"><p>员工活动</p><i class="icon"></i></a></li>
+            <li class="list-item-4 list-item "><a href="##" class="main-item-link"><p>关于我们</p><i class="icon"></i></a></li>
+            <li class="list-item-4 list-item "><a href="##" class="main-item-link"><img src="./images/banner1.jpg" alt=""></a></li>
+        </ul>
+
+    </main>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="./js/swiper.min.js"></script>
+
+<script>        
+    var mySwiper = new Swiper ('.swiper-container', {
+      loop: true, // 循环模式选项
+      autoplay: true,
+      // 如果需要分页器
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    
+    })        
+    </script>
+
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+  <!-- <link rel="stylesheet" href="css/slick.css" /> -->
+  <!-- <link rel="stylesheet" href="css/common.css" /> -->
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/company.css">
+</head>
+
+<body>
+  <!-- 一、头部 -->
+  <header class="back-header">
+    <i class="back-icon" onclick="history.go(-1)"></i>
+    <h5 class="header-title">创智何宇</h5>
+  </header>
+  <!-- 二、主体 -->
+  <main class="company-main">
+    <!-- 部分1：公司福利相关 -->
+    <section class=" ">
+      <!-- 公司名字、logo -->
+      <div class="name-logo clearfix">
+        <div class="name float-left">
+          <h3 class="common-company-h3-tit">创智和宇</h3>
+          <small class="nameInfo">已上市</small>
+          <small class="nameInfo">1000人以上</small>
+          <small class="nameInfo">互联网</small>
+        </div>
+        <div class="logoImg float-right noLeftPadding">
+          <img src="./images/logo.jpg" alt="" />
+        </div>
+      </div>
+      <!-- 福利 -->
+      <div class="companyWelfare clearfix">
+        <span class="float-left workTime">上午8:30-下午5:30</span>
+        <span class="float-right moreWelfare">更多福利</span>
+      </div>
+      <!-- 工作时间 -->
+      <div class="workingTime">
+        <span class="comSpan dayOff">双休</span>
+        <span class="comSpan overtime">偶尔加班</span>
+      </div>
+      
+      <!-- 福利：swiper轮播 -->
+      <div class="swiper-container welfare-banner" id="swiper1">
+        <div class="swiper-wrapper ">
+          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>五险一金</span></div>
+          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>补充医疗保险</span></a></div>
+          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>定期体检</span></div>
+          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>加班补助</span></div>
+          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>年终奖</span></div>
+          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>带薪年假</span></div>
+          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>员工旅游</span></div>
+          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>定期体检</span></div>
+          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>免费班车</span></div>
+          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>节日福利</span></div>
+      </div>
+    </div>
+    </section>
+    <!-- 部分2：公司介绍 -->
+    <section class="aboutCompany">
+      <h3 class="common-company-h3-tit">公司介绍</h3>
+      <div class="companyInfo ellipsis_3">
+        创智和宇是一家专业的行业软件开发商和综合IT服务提供商，专注于政府民生工程信息化领域，涵盖社会保障、医疗卫生、人力资源、劳动就业等政府民生行业。先后在湖南、湖北、北京、广东、青海等10余省份共承建各类民生信息化项目500多个。迄今为止，拥有项目实施成功率100%的骄人记录。
+        创智和宇是国家“金保工程”指定承建商。公司管理规范，先后通过ISO9001：2000质量认证、CMMI5国际软件成熟度模型认证，获得长沙高新技术企业、软件企业、重合同守信用企业等各类资质证书。
+        创智和宇公司现有员工700多人，其中研究人员与软件开发人员占43%，项目实施、服务人员占40%，系统集成与技术支持人员10%，市场及商务支持人员占17%。90%以上的员工具有大学本科以上学历。
+      </div>
+      <span class="companyInfoMore">阅读全文</span>
+    </section>
+
+    <!-- 部分3：公司照片 -->
+    <section class="companyPhoto">
+      <h3 class="common-company-h3-tit">公司照片</h3>
+      <div class="swiper-container companyPhoto-banner" id="swiper2">
+        <ul class="swiper-wrapper " >
+          <li class="swiper-slide banner-photo"><img src="./images//banner1.jpg" alt=""></li>
+          <li class="swiper-slide banner-photo"><img src="./images//banner2.jpg" alt=""></li>
+          <li class="swiper-slide banner-photo"><img src="./images//banner3.jpg" alt=""></li>
+          <li class="swiper-slide banner-photo"><img src="./images//banner4.jpg" alt=""></li>
+        </ul>
+
+      </div>
+      
+    </section>
+    <!-- 部分4：公司地址 -->
+    <section class="companyAddress">
+      <h3 class="common-company-h3-tit">公司地址</h3>
+      <div class="baiduMap" id="container"></div> 
+
+
+    </section>
+    <!-- 部分5：公司官网 -->
+    <section class="companyWebsite">
+      <h3 class="common-company-h3-tit">公司官网</h3>
+      <a class="websiteLink" href="http://wwww.powersi.com.cn">http://wwww.powersi.com.cn</a>
+
+    </section>
+    <!-- 部分6：工商信息 -->
+    <section class="commercialInfo">
+      <h3 class="common-company-h3-tit">工商信息</h3>
+      <ul class="commercial-list">
+        <li class="commercial-item clearfix"><span class="spanLeft float-left">公司全称</span><span class="spanRight float-right">创智和宇信息技术股份有限公司</span></li>
+        <li class="commercial-item clearfix"><span class="spanLeft float-left">企业法人</span><span class="spanRight float-right">伍千虎</span></li>
+        <li class="commercial-item clearfix"><span class="spanLeft float-left">注册时间</span><span class="spanRight float-right">2006-04-05</span></li>
+        <li class="commercial-item clearfix"><span class="spanLeft float-left">注册资本</span><span class="spanRight float-right">7890万元人民币</span></li>
+        <li class="commercial-item commercialSlideDown clearfix"><span class="spanLeft float-left">经营状态</span><span class="spanRight float-right">存续（在营、开业、在册）</span></li>
+        <li class="commercial-item commercialSlideDown clearfix"><span class="spanLeft float-left">统一信用代码</span><span class="spanRight float-right">91430100785391987L</span></li>
+        <li class="commercial-item commercialSlideDown clearfix"><span class="spanLeft float-left">经营范围</span><span class="spanRight businessScope float-right">信息系统集成服务；软件开发；软件技术转让；互联网信息技术咨询；软件技术服务；计算机网络平台的建设与开发；人脸识别系统的研发；网络集成系统建设、维护、运营、租赁；室内分布系统建设、维护、运营、租赁；信息技术咨询服务；数据处理和存储服务；计算机软件、计算机辅助设备、计算机外围设备、计算机应用电子设备、磁卡、智能卡、计算机、通信设备、通用仪器仪表、机电产品的销售；移动互联网研发和维护；广告设计；广告制作服务、国内代理服务、发布服务。（依法须经批准的项目，经相关部门批准后方可开展经营活动）</span></li>
+      </ul>
+      <div class="commericalInfo-more clearfix"><span class="more-info float-right">查看全部</span></div>
+
+    </section>
+  </main>
+  <!-- 三、底部弹出的职位列表 -->
+  <footer class="footer-jobList-wrap">
+    <div class="jobNum-box"><span class="jobNum">职位<small class="small-num">7456</small></span></div>
+    <!-- 部分1、职位刷选 -->
+    <ul class="brushSelettion-list">
+      <li class="brushSelect-item"><span class="jobType">推荐</span><i class="downIcon"></i></li>
+      <li class="brushSelect-item"><span class="jobType">城市</span><i class="downIcon"></i></li>
+      <li class="brushSelect-item"><span class="jobType">经验</span><i class="downIcon"></i></li>
+      <li class="brushSelect-item"><span class="jobType">薪资</span><i class="downIcon"></i></li>
+    </ul>
+    <!-- 部分2、刷选的下拉 -->
+    <ul class="sub-brushSelect-list" >
+      <li class="sub-brush-item">
+       <div class="sub-items-text">
+        <p class="item-tit">全部</p>
+        <p class="item-tit tit_selected">技术</p>
+        <p class="item-tit tit_selected">产品</p>
+        <p class="item-tit tit_selected">运营</p>
+        <p class="item-tit tit_selected">设计</p>
+        <p class="item-tit tit_selected">咨询/翻译/法律</p>
+        <p class="item-tit tit_selected">传媒</p>
+        <p class="item-tit tit_selected">人事/财务/行政</p>
+        <p class="item-tit tit_selected">市场</p>
+        <p class="item-tit tit_selected">销售</p>
+        <p class="item-tit tit_selected">管培生/储备干部</p>
+        <p class="item-tit tit_selected">生产制造</p>
+        <p class="item-tit tit_selected">采购/贸易</p>
+        <p class="item-tit tit_selected">教育培训</p>
+        <p class="item-tit tit_selected">其他</p>
+        <p class="item-tit tit_selected">医疗健康</p>
+        <p class="item-tit tit_selected">供应链/物流</p>
+        <p class="item-tit tit_selected">管理</p>
+       </div>
+      </li>
+      <li class="sub-brush-item">
+        <div class="sub-items-text">
+          <p class="item-tit">全部</p>
+          <p class="item-tit tit_selected">长沙</p>
+          <p class="item-tit tit_selected">上海</p>
+          <p class="item-tit tit_selected">深圳</p>
+        </div>
+      </li>  <li class="sub-brush-item">
+         <div class="sub-items-text">
+          <p class="item-tit">全部</p>
+          <p class="item-tit tit_selected">在校生</p>
+          <p class="item-tit tit_selected">1年以内</p>
+          <p class="item-tit tit_selected">1-3年</p>
+          <p class="item-tit tit_selected">3-5年</p>
+          <p class="item-tit tit_selected">5-10年</p>
+          <p class="item-tit tit_selected">10年以上</p>
+        </div>
+      </li>
+    </li>  
+    <li class="sub-brush-item">
+       <div class="sub-items-text">
+        <p class="item-tit">不限</p>
+        <p class="item-tit tit_selected">3K以下</p>
+        <p class="item-tit tit_selected">3-5K</p>
+        <p class="item-tit tit_selected">5-10K</p>
+        <p class="item-tit tit_selected">10-20K</p>
+        <p class="item-tit tit_selected">20-50K</p>
+      </div>
+    </li>
+    </ul>
+    <!-- 部分3、职位列表 -->
+    <section class="jobList-box">
+      <ul class="jobList-content">
+        <li class="job-list-item">
+          <div class="job-name clearfix">
+            <h4 class="name float-left">web前端开发工程师1</h4> <span class="salary float-right">5-10K</span>
+          </div>
+          <div class="job-demand-location">
+            <span class="demand-tit">长沙 岳麓区 麓谷</span>
+            <span class="demand-tit">3-5年</span>
+            <span class="demand-tit">本科</span>
+          </div>
+          <div class="about-hr">
+            <img src="./images/iconHR.jpg" alt="" class="hr-img">
+            <span class="comSpan hr-name">徐先生</span>
+            <i class="icon-cirlce">·</i>
+            <span class="comSpan">招聘HR</span>
+          </div>
+        </li>
+        <li class="job-list-item">
+          <div class="job-name clearfix">
+            <h4 class="name float-left">web前端开发工程师2</h4> <span class="salary float-right">5-10K</span>
+          </div>
+          <div class="job-demand-location">
+            <span class="demand-tit">长沙 岳麓区 麓谷</span>
+            <span class="demand-tit">3-5年</span>
+            <span class="demand-tit">本科</span>
+          </div>
+          <div class="about-hr">
+            <img src="./images/iconHR.jpg" alt="" class="hr-img">
+            <span class="comSpan hr-name">徐先生</span>
+            <i class="icon-cirlce">·</i>
+            <span class="comSpan">招聘HR</span>
+          </div>
+        </li>
+        <li class="job-list-item">
+          <div class="job-name clearfix">
+            <h4 class="name float-left">web前端开发工程师3</h4> <span class="salary float-right">5-10K</span>
+          </div>
+          <div class="job-demand-location">
+            <span class="demand-tit">长沙 岳麓区 麓谷</span>
+            <span class="demand-tit">3-5年</span>
+            <span class="demand-tit">本科</span>
+          </div>
+          <div class="about-hr">
+            <img src="./images/iconHR.jpg" alt="" class="hr-img">
+            <span class="comSpan hr-name">徐先生</span>
+            <i class="icon-cirlce">·</i>
+            <span class="comSpan">招聘HR</span>
+          </div>
+        </li>
+        <li class="job-list-item">
+          <div class="job-name clearfix">
+            <h4 class="name float-left">web前端开发工程师4</h4> <span class="salary float-right">5-10K</span>
+          </div>
+          <div class="job-demand-location">
+            <span class="demand-tit">长沙 岳麓区 麓谷</span>
+            <span class="demand-tit">3-5年</span>
+            <span class="demand-tit">本科</span>
+          </div>
+          <div class="about-hr">
+            <img src="./images/iconHR.jpg" alt="" class="hr-img">
+            <span class="comSpan hr-name">徐先生</span>
+            <i class="icon-cirlce">·</i>
+            <span class="comSpan">招聘HR</span>
+          </div>
+        </li>
+        <li class="job-list-item">
+          <div class="job-name clearfix">
+            <h4 class="name float-left">web前端开发工程师5</h4> <span class="salary float-right">5-10K</span>
+          </div>
+          <div class="job-demand-location">
+            <span class="demand-tit">长沙 岳麓区 麓谷</span>
+            <span class="demand-tit">3-5年</span>
+            <span class="demand-tit">本科</span>
+          </div>
+          <div class="about-hr">
+            <img src="./images/iconHR.jpg" alt="" class="hr-img">
+            <span class="comSpan hr-name">徐先生</span>
+            <i class="icon-cirlce">·</i>
+            <span class="comSpan">招聘HR</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </footer>
+  <!-- 四、背景模糊 -->
+  <div class="backgroundBlur"></div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=tfyPSxoXaqxjucWTglxK7R1jWkW8OlO6"></script>
+
+<script> 
+  // 0、公司福利：轮播
+  var mySwiper1 = new Swiper ('#swiper1', {
+    slidesPerView : 3,
+    centeredSlides : true,
+    centeredSlidesBounds: true,
+  });     
+  
+  /*1、公司官网：轮播 */
+  var mySwiper2 = new Swiper('#swiper2',{
+    slidesPerView : 1.5,
+    // slidesOffsetAfter : 50,
+    spaceBetween : 10,
+  });   
+
+  /* 2、查看公司介绍： */
+  $('.companyInfoMore').click(function(){
+    $(".companyInfo").removeClass('ellipsis_3').fadeIn();
+    $(this).hide()
+  });
+
+  /* 3、查看工商信息 */
+  $('.commericalInfo-more').click(function(){
+    $('.commercialSlideDown').fadeIn()
+    $(this).hide();
+    $(document).scrollTop($(document).height());
+  })
+
+  /* 4、百度地图 */
+  function initMap() {
+    var map = new BMapGL.Map("container");
+    // 创建地图实例 
+    var point = new BMapGL.Point(112.861994, 28.244022);
+    // 创建点坐标 
+    map.centerAndZoom(point, 19);
+    map.enableScrollWheelZoom(false);  
+    // 初始化地图，设置中心点坐标和地图级别
+    var marker = new BMapGL.Marker(point);
+    map.addOverlay(marker); 
+ }
+ window.onload = initMap;
+
+  /* 5、底部弹出的职位列表（一级刷选） */
+  $('.brushSelettion-list').on('click','.brushSelect-item',function(){
+    
+    var index = $(this).index();
+    $('.sub-brush-item').eq(index).slideToggle()
+    $('.sub-brush-item').eq(index).siblings().hide(0);
+   
+    // $('.sub-brush-item').siblings().hide(0).eq(index).slideToggle(400);
+   
+    // $(this).toggleClass('checkedOn')
+  });
+
+  /*6、底部弹出的职位列表（二级刷选）*/
+  $('.sub-brushSelect-list').on('click','.sub-brush-item',function(e){
+    var target = $(e.target);
+    console.log(target)
+    if(target.hasClass('tit_selected')){
+      var _index = target.closest('.sub-brush-item').index();
+      var _text = e.target.innerText
+      $('.brushSelect-item').eq(_index).find('.jobType').text(_text)
+    }
+    $('.sub-brush-item').slideUp()
+
+
+  })
+
+
+  </script>
+  
+
+
+
+ 
+
+</html>

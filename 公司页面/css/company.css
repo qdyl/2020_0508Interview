@@ -1,0 +1,524 @@
+/* 公共样式 */
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  max-width: 768px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/*  重置样式 */
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+/*  功能类名 */
+.noPadding {
+  padding: 0;
+}
+.noLeftPadding {
+  padding-left: 0;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.back-header {
+  position: fixed;
+  z-index: 9;
+  width: calc(100vw - 20px);
+  max-width: 768px;
+  padding: 0 10px;
+  height: 40px;
+  background-color: #050409;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-align: center;
+}
+.back-header .header-title {
+  display: inline-block;
+  margin: 0;
+  line-height: 40px;
+}
+.back-header .back-icon {
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+.back-header .back-icon:before {
+  position: absolute;
+  top: 15px;
+  display: inline-block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: 1.5px solid #fff;
+  border-right: 1.5px solid #fff;
+  transform: rotate(225deg);
+}
+.company-main {
+  padding: 40px 15px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.82);
+  min-height: 100vh;
+  position: relative;
+  z-index: 5;
+}
+.company-main .common-company-h3-tit {
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.company-main .name-logo {
+  margin-top: 20px;
+}
+.company-main .name-logo h3 {
+  margin-bottom: 6px;
+}
+.company-main .name-logo .name {
+  width: auto;
+}
+.company-main .name-logo .nameInfo {
+  position: relative;
+  display: inline-block;
+  padding-right: 10px;
+  font-size: 12px;
+  color: #938F8C;
+}
+.company-main .name-logo .nameInfo::after {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  top: 8px;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #938F8C;
+}
+.company-main .name-logo .nameInfo:last-child::after {
+  width: 0;
+}
+.company-main .name-logo .logoImg {
+  width: auto;
+  border-radius: 4px;
+}
+.company-main .name-logo .logoImg img {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+}
+.company-main .companyWelfare {
+  margin-top: 20px;
+}
+.company-main .companyWelfare .workTime {
+  position: relative;
+  font-size: 12px;
+  padding-left: 20px;
+}
+.company-main .companyWelfare .workTime::before {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  display: inline-block;
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: url(../images//iconTime1.png) no-repeat left center / 15px 15px;
+}
+.company-main .companyWelfare .moreWelfare {
+  position: relative;
+  padding-right: 15px;
+  color: #938987;
+  font-size: 13px;
+}
+.company-main .companyWelfare .moreWelfare::after {
+  position: absolute;
+  right: 0;
+  top: 5.5px;
+  display: inline-block;
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(45deg);
+}
+.company-main .workingTime {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.company-main .workingTime .comSpan {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+  padding-left: 20px;
+}
+.company-main .workingTime .comSpan::after {
+  position: absolute;
+  left: 0;
+  top: 0px;
+  display: inline-block;
+  content: '';
+  width: 15px;
+  height: 15px;
+}
+.company-main .workingTime .dayOff::after {
+  background: url(../images/icondayoff.png) no-repeat left center / 15px 15px;
+}
+.company-main .workingTime .overtime::after {
+  background: url(../images/iconWorkOver.png) no-repeat left center / 15px 15px;
+}
+.company-main .welfare-banner {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 12px;
+  overflow: hidden;
+}
+.company-main .welfare-banner .welfare-item {
+  display: flex;
+  margin-right: 10px;
+  height: 50px;
+  border-radius: 6px;
+  border: 1px solid #493830;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.company-main .welfare-banner .welfare-item:last-child {
+  margin-right: 0;
+}
+.company-main .welfare-banner .welfare-item img {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.company-main .aboutCompany {
+  margin-top: 40px;
+}
+.company-main .aboutCompany .companyInfo {
+  margin-top: 12px;
+  margin-bottom: 4px;
+  line-height: 22px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.company-main .aboutCompany .companyInfo.ellipsis_3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.company-main .aboutCompany .companyInfoMore {
+  padding: 2px 20px 2px 0;
+  font-size: 12px;
+  color: #9FA3A2;
+}
+.company-main .companyPhoto {
+  margin-top: 40px;
+}
+.company-main .companyPhoto h4 {
+  margin-bottom: 15px;
+}
+.company-main .companyPhoto .companyPhoto-banner {
+  height: 130px;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.company-main .companyPhoto .banner-photo {
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+}
+.company-main .companyPhoto .banner-photo img {
+  width: 100%;
+  height: 130px;
+  border-radius: 6px;
+}
+.company-main .companyAddress {
+  margin-top: 40px;
+}
+.company-main .companyAddress .baiduMap {
+  height: 150px;
+  border-radius: 6px;
+}
+.company-main .companyWebsite {
+  margin-top: 40px;
+}
+.company-main .companyWebsite .websiteLink {
+  display: block;
+  position: relative;
+  color: #fff;
+  font-size: 13px;
+}
+.company-main .companyWebsite .websiteLink::after {
+  position: absolute;
+  right: 0;
+  top: 5.5px;
+  display: inline-block;
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(45deg);
+}
+.company-main .commercialInfo {
+  margin-top: 40px;
+}
+.company-main .commercialInfo .commercial-item {
+  line-height: 28px;
+}
+.company-main .commercialInfo .commercial-item.commercialSlideDown {
+  display: none;
+}
+.company-main .commercialInfo .spanLeft {
+  width: 110px;
+  color: #C8C0BD;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.company-main .commercialInfo .spanRight {
+  width: calc(100% - 110px);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-align: right;
+}
+.company-main .commercialInfo .spanRight.businessScope {
+  line-height: 18px;
+  font-size: 12px;
+  text-align: left;
+}
+.company-main .commercialInfo .commericalInfo-more {
+  margin-top: 15px;
+}
+.company-main .commercialInfo .commericalInfo-more .more-info {
+  font-size: 12px;
+  color: #9FA3A2;
+}
+.footer-jobList-wrap {
+  padding: 5px 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: fixed;
+  z-index: 20;
+  top: 60px;
+  bottom: 0;
+  width: calc(100vw - 20px);
+  max-width: 768px;
+  height: calc(100vh - 60px);
+  background-color: #fff;
+}
+.footer-jobList-wrap::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5px;
+  display: inline-block;
+  width: 40px;
+  height: 4px;
+  background-color: #EBEBEB;
+  border-radius: 20px;
+}
+.footer-jobList-wrap .jobNum-box {
+  margin-top: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #EDEDED;
+}
+.footer-jobList-wrap .jobNum-box .jobNum {
+  position: relative;
+  padding-bottom: 4px;
+  color: #767676;
+  font-size: 13px;
+}
+.footer-jobList-wrap .jobNum-box .jobNum::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #39C0BA;
+}
+.footer-jobList-wrap .jobNum-box .small-num {
+  padding-left: 10px;
+  color: #A8A8A8;
+  font-size: 12px;
+}
+.footer-jobList-wrap .brushSelettion-list {
+  border-bottom: 1px solid #EDEDED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #A1A1A1;
+  font-size: 12px;
+  height: 40px;
+}
+.footer-jobList-wrap .brushSelettion-list .brushSelect-item {
+  position: relative;
+  flex: 0 0 25%;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.footer-jobList-wrap .brushSelettion-list .brushSelect-item::after {
+  position: absolute;
+  content: '';
+  right: 0;
+  top: 0;
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background-color: #F4F4F4;
+}
+.footer-jobList-wrap .brushSelettion-list .brushSelect-item:last-child::after {
+  width: 0;
+}
+.footer-jobList-wrap .brushSelettion-list .checkedOn .jobType {
+  overflow: hidden;
+  display: inline-block;
+  max-width: 60px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.footer-jobList-wrap .brushSelettion-list .checkedOn .downIcon::before {
+  top: 4px;
+  transform: rotate(-45deg);
+}
+.footer-jobList-wrap .brushSelettion-list .downIcon {
+  position: relative;
+  margin-left: 5px;
+}
+.footer-jobList-wrap .brushSelettion-list .downIcon::before {
+  position: absolute;
+  top: 5px;
+  display: inline-block;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-top: 1px solid #AAAAAA;
+  border-right: 1px solid #AAAAAA;
+  transform: rotate(135deg);
+}
+.footer-jobList-wrap .sub-brushSelect-list {
+  position: absolute;
+  top: 84px;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+}
+.footer-jobList-wrap .sub-brushSelect-list .sub-brush-item {
+  z-index: 6;
+  font-size: 13px;
+  display: none;
+  color: #1F1F1F;
+  height: calc(100vh - 141px);
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.footer-jobList-wrap .sub-brushSelect-list .sub-items-text {
+  padding: 0 15px;
+  height: calc(100vh - 281px);
+  overflow: auto;
+  background-color: #fff;
+}
+.footer-jobList-wrap .sub-brushSelect-list .sub-items-text .item-tit {
+  line-height: 50px;
+}
+.footer-jobList-wrap .sub-brushSelect-list .sub-items-text .item-tit:first-child {
+  font-weight: 600;
+}
+.footer-jobList-wrap .jobList-box .jobList-content {
+  height: calc(100vh - 160px);
+  overflow: auto;
+}
+.footer-jobList-wrap .jobList-box .job-list-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #EDEDED;
+}
+.footer-jobList-wrap .jobList-box .job-list-item:last-child {
+  border-bottom: none;
+}
+.footer-jobList-wrap .jobList-box .job-name .name {
+  line-height: 24px;
+  color: #242424;
+  letter-spacing: 1px;
+}
+.footer-jobList-wrap .jobList-box .job-name .salary {
+  font-size: 14px;
+  color: #2D9FA0;
+}
+.footer-jobList-wrap .jobList-box .job-demand-location {
+  margin: 10px 0 15px;
+  font-size: 12px;
+  color: #5A5A5A;
+}
+.footer-jobList-wrap .jobList-box .job-demand-location .demand-tit {
+  margin-right: 4px;
+  padding: 2px 6px;
+  background-color: #F5F5F5;
+  border-radius: 4px;
+}
+.footer-jobList-wrap .jobList-box .about-hr {
+  font-size: 12px;
+  color: #313131;
+}
+.footer-jobList-wrap .jobList-box .about-hr .hr-img {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.footer-jobList-wrap .jobList-box .about-hr .icon-cirlce {
+  margin: 0 5px;
+}
+.backgroundBlur {
+  position: fixed;
+  top: -40px;
+  z-index: -1;
+  background: url('../images/banner1.jpg');
+  filter: blur(15px);
+  /*为了模糊更明显，调高模糊度*/
+  width: 100vw;
+  max-width: 768px;
+  min-height: 100vh;
+}
+.backgroundBlur::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url('../images/banner1.jpg');
+  filter: blur(5px);
+  /*为了模糊更明显，调高模糊度*/
+  z-index: 2;
+}
+@media (min-width: 769px) {
+  .back-header {
+    box-sizing: border-box;
+  }
+  .footer-jobList-wrap {
+    box-sizing: border-box;
+  }
+}

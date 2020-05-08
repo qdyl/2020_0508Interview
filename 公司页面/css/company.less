@@ -1,0 +1,613 @@
+ /* 公共样式 */
+ *{
+     padding: 0;
+     margin: 0;
+ }
+ body {
+    max-width: 768px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, .1);
+}
+
+/*  重置样式 */
+ul,
+ol,
+li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+/*  功能类名 */
+.noPadding {
+    padding: 0;
+}
+
+.noLeftPadding {
+    padding-left: 0;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+// 2、公司页面
+
+.back-header {
+    position: fixed;
+    z-index: 9;
+    width: calc(100vw - 20px);
+    max-width: 768px;
+    padding: 0 10px;
+    height: 40px;
+    // line-height: 40px;
+    background-color: #050409;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    color: #fff;
+    text-align: center;
+
+    .header-title {
+        display: inline-block;
+        margin: 0;
+        line-height: 40px;
+    }
+
+    .back-icon {
+        position: absolute;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+    }
+
+    .back-icon:before {
+        position: absolute;
+        top: 15px;
+        display: inline-block;
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-top: 1.5px solid #fff;
+        border-right: 1.5px solid #fff;
+        transform: rotate(225deg);
+    }
+}
+// 二、主体
+.company-main {
+
+    padding: 40px 15px;
+    color: #fff;
+    background-color: rgba(0,0,0,.82);
+    min-height: 100vh;
+    position: relative;
+    z-index: 5;
+    // 公用  h3 标签样式
+    .common-company-h3-tit{
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    // 公司名字、logo
+    .name-logo {
+        margin-top: 20px;
+
+        h3 {
+            margin-bottom: 6px;
+        }
+
+        .name {
+            width: auto;
+        }
+
+        .nameInfo {
+            position: relative;
+            display: inline-block;
+            padding-right: 10px;
+            font-size: 12px;
+            color: #938F8C;
+
+            &::after {
+                display: inline-block;
+                position: absolute;
+                right: 0px;
+                top: 8px;
+                content: '';
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: #938F8C;
+            }
+
+            &:last-child {
+                &::after {
+                    width: 0;
+                }
+            }
+        }
+
+        .logoImg {
+            width: auto;
+            border-radius: 4px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 6px;
+            }
+        }
+    }
+
+    // 福利
+    .companyWelfare {
+        margin-top: 20px;
+
+        .workTime {
+            position: relative;
+            font-size: 12px;
+            padding-left: 20px;
+
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 2px;
+                display: inline-block;
+                content: '';
+                width: 15px;
+                height: 15px;
+                background: url(../images//iconTime1.png) no-repeat left center/15px 15px;
+            }
+        }
+
+        .moreWelfare {
+            position: relative;
+            padding-right: 15px;
+            color: #938987;
+            font-size: 13px;
+
+            &::after {
+                position: absolute;
+                right: 0;
+                top: 5.5px;
+                display: inline-block;
+                content: '';
+                width: 8px;
+                height: 8px;
+                border-top: 1px solid #fff;
+                border-right: 1px solid #fff;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    // 双休
+    .workingTime {
+        margin-top: 10px;
+        font-size: 12px;
+
+        .comSpan {
+            position: relative;
+            display: inline-block;
+            margin-right: 15px;
+            padding-left: 20px;
+
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 0px;
+                display: inline-block;
+                content: '';
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        .dayOff::after {
+            background: url(../images/icondayoff.png) no-repeat left center/15px 15px;
+        }
+
+        .overtime::after {
+            background: url(../images/iconWorkOver.png) no-repeat left center/15px 15px;
+        }
+    }
+
+    // 轮播：福利
+    .welfare-banner {
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-size: 12px;
+        overflow: hidden;
+
+        .welfare-item {
+            display: flex;
+            margin-right: 10px;
+            height: 50px;
+            border-radius: 6px;
+            border: 1px solid #493830;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            &:last-child{
+                margin-right: 0;
+            }
+
+            img {
+                margin-right: 5px;
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    // 部分2： 公司介绍
+    .aboutCompany {
+        margin-top: 40px;
+        .companyInfo {
+            margin-top: 12px;
+            margin-bottom: 4px;
+            line-height: 22px;
+           
+            font-size: 13px;
+            letter-spacing: 1px;
+            &.ellipsis_3{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+        }
+        .companyInfoMore{
+            padding: 2px 20px 2px 0;
+            font-size: 12px;
+            color: #9FA3A2;
+        }
+
+    }
+    // 部分3：公司照片
+    .companyPhoto{
+        margin-top: 40px;
+        h4{
+            margin-bottom: 15px;
+        }
+        .companyPhoto-banner{
+            height: 130px;
+            margin-bottom: 0;
+            overflow: hidden;
+        }
+        .banner-photo{
+            width: 100%;
+            height: 130px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 130px;
+                border-radius: 6px;
+            }
+           
+
+        }
+    }
+    // 部分4：公司地址
+    .companyAddress{
+        margin-top: 40px;
+        .baiduMap{
+            height: 150px;
+            border-radius: 6px;
+        }
+
+    }
+    // 部分5：公司官网
+    .companyWebsite{
+        margin-top: 40px;
+        .websiteLink{
+            display: block;
+            position: relative;
+            color: #fff;
+            font-size: 13px;
+            &::after{
+                position: absolute;
+                right: 0;
+                top: 5.5px;
+                display: inline-block;
+                content: '';
+                width: 8px;
+                height: 8px;
+                border-top: 1px solid #fff;
+                border-right: 1px solid #fff;
+                transform: rotate(45deg);
+            }
+        }
+    }
+    // 部分6：工商信息
+    .commercialInfo{
+        margin-top: 40px;
+        .commercial-list{
+            // height: 112px;
+            // overflow: hidden;
+        }
+        .commercial-item{
+            // margin-top: 10px;
+            line-height: 28px;
+            &.commercialSlideDown{
+                display: none;
+            }
+        }
+        .spanLeft{
+            width: 110px;
+            color: #C8C0BD;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+        .spanRight{
+            width: calc(100% - 110px);
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-align: right;
+            &.businessScope{
+                line-height: 18px;
+                font-size: 12px;
+                text-align: left;
+            }
+        }
+        .commericalInfo-more{
+            margin-top: 15px;
+            .more-info{
+                font-size: 12px;
+                color: #9FA3A2;
+            }
+        }
+    }
+
+
+}
+// 三、底部弹出的职位列表
+.footer-jobList-wrap{
+    padding: 5px 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: fixed;
+    z-index: 20;
+    top: 60px;
+    bottom: 0;
+    width: calc(100vw - 20px);
+    max-width: 768px;
+    height: calc(100vh - 60px);
+    background-color: #fff;
+    &::after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5px;
+        display: inline-block;
+        width: 40px;
+        height: 4px;
+        background-color: #EBEBEB;
+        border-radius: 20px;
+    }
+    .jobNum-box{
+        margin-top: 10px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #EDEDED;
+        .jobNum{
+            position: relative;
+            padding-bottom: 4px;
+            color: #767676;
+            font-size: 13px;
+            
+            &::after{
+                content: '';
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 100%;
+                height: 2px;
+                background-color: #39C0BA;
+            }
+        }
+        .small-num{
+            padding-left: 10px;
+            color: #A8A8A8;
+            font-size: 12px;
+        }
+        
+
+    }
+    // 部分1、职位刷选
+    .brushSelettion-list{
+        border-bottom: 1px solid #EDEDED;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #A1A1A1;
+        font-size: 12px;
+        height: 40px;
+        .brushSelect-item{
+            position: relative;
+            flex:0 0 25%;
+            text-align: center;
+            letter-spacing: 1px;
+            &::after{
+                position: absolute;
+                content: '';
+                right: 0;
+                top: 0;
+                display: inline-block;
+                width: 1px;
+                height: 20px;
+                background-color: #F4F4F4;
+            }
+            &:last-child::after{
+                width: 0;
+            }
+        }
+        .checkedOn{
+            .jobType{
+                overflow: hidden;
+                display: inline-block;
+                max-width: 60px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .downIcon{
+                &::before{ 
+                    top: 4px;
+                    transform: rotate(-45deg);
+                }
+               
+            }
+
+        }
+        .downIcon{
+            position: relative;
+            margin-left: 5px;
+            &::before{
+                position: absolute;
+                top: 5px;
+                display: inline-block;
+                content: '';
+                width: 4px;
+                height: 4px;
+                border-top: 1px solid #AAAAAA;
+                border-right: 1px solid #AAAAAA;
+                transform: rotate(135deg);
+
+            }
+           
+        }
+    }
+    // 部分2：刷选的下拉
+    .sub-brushSelect-list{
+        position: absolute;
+        top: 84px;
+        left: 0;
+        z-index: 5;
+        width: 100%;
+        
+        .sub-brush-item{
+            z-index: 6;
+            font-size: 13px;
+            display: none;
+            color: #1F1F1F;
+            height: calc(100vh - 141px);
+            background-color: rgba(0,0,0,.15);
+        }
+        .sub-items-text{
+            padding: 0 15px;
+            height: calc(100vh - 281px);
+            overflow: auto;
+            background-color: #fff;
+            .item-tit{
+                line-height: 50px;
+            }
+            .item-tit:first-child{
+                font-weight: 600;
+            }
+        }
+    }
+    // 部分3、职位列表
+    .jobList-box{
+        .jobList-content{
+            height: calc(100vh - 160px);
+            overflow: auto;
+        }
+        .job-list-item{
+            padding: 15px 0;
+            border-bottom: 1px solid #EDEDED;
+            &:last-child{
+                border-bottom: none;
+            }
+        }
+        .job-name{
+            .name{
+                line-height: 24px;
+                color: #242424;
+                letter-spacing: 1px;
+            }
+            .salary{
+                font-size: 14px;
+                color: #2D9FA0;
+            }
+
+        }
+        .job-demand-location{
+            margin: 10px 0 15px;
+            font-size: 12px;
+            color: #5A5A5A;
+            .demand-tit{
+                margin-right: 4px;
+                padding: 2px 6px;
+                background-color: #F5F5F5;
+                border-radius: 4px;
+            }
+
+        }
+        .about-hr{
+            font-size: 12px;
+            color: #313131;
+            .hr-img{
+                margin-right: 5px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                vertical-align: middle;
+            }
+            .icon-cirlce{
+                margin: 0 5px;
+            }
+            
+        }
+    }
+}
+
+// 四、背景模糊处理
+.backgroundBlur{
+    position: fixed;
+    top: -40px;
+    z-index: -1;
+    background: url('../images/banner1.jpg');
+    filter: blur(15px);/*为了模糊更明显，调高模糊度*/
+    width: 100vw;
+    max-width: 768px;
+    min-height: 100vh;
+    &::after{
+        content: "";
+        width:100%;
+        height:100%;
+        position: absolute;
+        left:0;
+        top:0;
+        background: url('../images/banner1.jpg');
+        filter: blur(5px);/*为了模糊更明显，调高模糊度*/
+        z-index: 2;
+    }
+
+}
+
+// 媒体查询
+@media (min-width:769px) {
+    // 头部
+    .back-header{
+        box-sizing: border-box;
+    }
+    // 底部弹出的职位列表
+    .footer-jobList-wrap{
+        box-sizing: border-box;
+
+    }
+
+
+}

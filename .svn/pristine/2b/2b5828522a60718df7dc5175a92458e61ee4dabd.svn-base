@@ -1,0 +1,28 @@
+ /* 公共样式 */
+body {
+    max-width: 768px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, .1);
+}
+
+/*  重置样式 */
+ul,
+ol,
+li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*  功能类名 */
+.noPadding {
+    padding: 0;
+}
+
+.noLeftPadding {
+    padding-left: 0;
+}

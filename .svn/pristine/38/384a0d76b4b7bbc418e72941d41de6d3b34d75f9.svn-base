@@ -1,0 +1,242 @@
+// 2、公司页面
+.back-header {
+    position: fixed;
+    z-index: 9;
+    width: 100vw;
+    max-width: 768px;
+    padding: 0 10px;
+    height: 40px;
+    // line-height: 40px;
+    background-color: #050409;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    color: #fff;
+    text-align: center;
+
+    .header-title {
+        display: inline-block;
+        line-height: 40px;
+    }
+
+    .back-icon {
+        position: absolute;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+    }
+
+    .back-icon:before {
+        position: absolute;
+        top: 15px;
+        display: inline-block;
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-top: 1.5px solid #fff;
+        border-right: 1.5px solid #fff;
+        transform: rotate(225deg);
+    }
+}
+
+.company-main {
+    // padding: 40px 10px 0;
+    padding-top: 40px;
+    color: #fff;
+    background-color: #050409;
+    min-height: 100vh;
+
+    // 公司名字、logo
+    .name-logo {
+        margin-top: 20px;
+
+        h4 {
+            margin-bottom: 4px;
+        }
+
+        .name {
+            width: auto;
+        }
+
+        .nameInfo {
+            position: relative;
+            display: inline-block;
+            padding-right: 10px;
+            font-size: 12px;
+            color: #938F8C;
+
+            &::after {
+                display: inline-block;
+                position: absolute;
+                right: 0px;
+                top: 8px;
+                content: '';
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: #938F8C;
+            }
+
+            &:last-child {
+                &::after {
+                    width: 0;
+                }
+            }
+        }
+
+        .logoImg {
+            width: auto;
+            border-radius: 4px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 6px;
+            }
+        }
+    }
+
+    // 福利
+    .companyWelfare {
+        margin-top: 15px;
+
+        .workTime {
+            position: relative;
+            font-size: 12px;
+            padding-left: 20px;
+
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 2px;
+                display: inline-block;
+                content: '';
+                width: 15px;
+                height: 15px;
+                background: url(../images//iconTime1.png) no-repeat left center/15px 15px;
+            }
+        }
+
+        .moreWelfare {
+            position: relative;
+            padding-right: 15px;
+            color: #938987;
+            font-size: 13px;
+
+            &::after {
+                position: absolute;
+                right: 0;
+                top: 5.5px;
+                display: inline-block;
+                content: '';
+                width: 10px;
+                height: 10px;
+                border-top: 1px solid #fff;
+                border-right: 1px solid #fff;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    // 双休
+    .workingTime {
+        margin-top: 10px;
+        font-size: 12px;
+
+        .comSpan {
+            position: relative;
+            display: inline-block;
+            margin-right: 15px;
+            padding-left: 20px;
+
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 2px;
+                display: inline-block;
+                content: '';
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        .dayOff::after {
+            background: url(../images/icondayoff.png) no-repeat left center/15px 15px;
+        }
+
+        .overtime::after {
+            background: url(../images/iconWorkOver.png) no-repeat left center/15px 15px;
+        }
+    }
+
+    // 轮播：福利
+    .welfare-banner {
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-size: 12px;
+        overflow: hidden;
+
+        .welfare-item {
+            // display: flex;
+            margin-right: 10px;
+            height: 50px;
+            border-radius: 6px;
+            border: 1px solid #493830;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            &:last-child{
+                margin-right: 0;
+            }
+
+            img {
+                margin-right: 5px;
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    // 部分二： 公司介绍
+    .aboutCompany {
+        margin-top: 40px;
+        font-size: 13px;
+
+        .companyInfo {
+            margin-top: 12px;
+            margin-bottom: 4px;
+            line-height: 22px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+        .companyInfoMore{
+            color: #9FA3A2;
+
+        }
+
+    }
+    // 部分三：公司照片
+    .companyPhoto{
+        margin-top: 40px;
+        .companyPhoto-banner{
+            margin-bottom: 0;
+            overflow: hidden;
+        }
+        .banner-photo{
+            margin-right: 10px;
+            width: 200px;
+            height: 150px;
+            overflow: hidden;
+            &:last-child{
+                margin-right: 0;
+            }
+
+        }
+    }
+
+
+}

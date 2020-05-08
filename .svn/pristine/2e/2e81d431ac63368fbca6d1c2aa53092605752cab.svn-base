@@ -1,0 +1,198 @@
+.back-header {
+  position: fixed;
+  z-index: 9;
+  width: 100vw;
+  max-width: 768px;
+  padding: 0 10px;
+  height: 40px;
+  background-color: #050409;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-align: center;
+}
+.back-header .header-title {
+  display: inline-block;
+  line-height: 40px;
+}
+.back-header .back-icon {
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+.back-header .back-icon:before {
+  position: absolute;
+  top: 15px;
+  display: inline-block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: 1.5px solid #fff;
+  border-right: 1.5px solid #fff;
+  transform: rotate(225deg);
+}
+.company-main {
+  padding-top: 40px;
+  color: #fff;
+  background-color: #050409;
+  min-height: 100vh;
+}
+.company-main .name-logo {
+  margin-top: 20px;
+}
+.company-main .name-logo h4 {
+  margin-bottom: 4px;
+}
+.company-main .name-logo .name {
+  width: auto;
+}
+.company-main .name-logo .nameInfo {
+  position: relative;
+  display: inline-block;
+  padding-right: 10px;
+  font-size: 12px;
+  color: #938F8C;
+}
+.company-main .name-logo .nameInfo::after {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  top: 8px;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #938F8C;
+}
+.company-main .name-logo .nameInfo:last-child::after {
+  width: 0;
+}
+.company-main .name-logo .logoImg {
+  width: auto;
+  border-radius: 4px;
+}
+.company-main .name-logo .logoImg img {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+}
+.company-main .companyWelfare {
+  margin-top: 15px;
+}
+.company-main .companyWelfare .workTime {
+  position: relative;
+  font-size: 12px;
+  padding-left: 20px;
+}
+.company-main .companyWelfare .workTime::before {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  display: inline-block;
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: url(../images//iconTime1.png) no-repeat left center / 15px 15px;
+}
+.company-main .companyWelfare .moreWelfare {
+  position: relative;
+  padding-right: 15px;
+  color: #938987;
+  font-size: 13px;
+}
+.company-main .companyWelfare .moreWelfare::after {
+  position: absolute;
+  right: 0;
+  top: 5.5px;
+  display: inline-block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(45deg);
+}
+.company-main .workingTime {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.company-main .workingTime .comSpan {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+  padding-left: 20px;
+}
+.company-main .workingTime .comSpan::after {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  display: inline-block;
+  content: '';
+  width: 15px;
+  height: 15px;
+}
+.company-main .workingTime .dayOff::after {
+  background: url(../images/icondayoff.png) no-repeat left center / 15px 15px;
+}
+.company-main .workingTime .overtime::after {
+  background: url(../images/iconWorkOver.png) no-repeat left center / 15px 15px;
+}
+.company-main .welfare-banner {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 12px;
+  overflow: hidden;
+}
+.company-main .welfare-banner .welfare-item {
+  margin-right: 10px;
+  height: 50px;
+  border-radius: 6px;
+  border: 1px solid #493830;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.company-main .welfare-banner .welfare-item:last-child {
+  margin-right: 0;
+}
+.company-main .welfare-banner .welfare-item img {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.company-main .aboutCompany {
+  margin-top: 40px;
+  font-size: 13px;
+}
+.company-main .aboutCompany .companyInfo {
+  margin-top: 12px;
+  margin-bottom: 4px;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.company-main .aboutCompany .companyInfoMore {
+  color: #9FA3A2;
+}
+.company-main .companyPhoto {
+  margin-top: 40px;
+}
+.company-main .companyPhoto .companyPhoto-banner {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.company-main .companyPhoto .banner-photo {
+  margin-right: 10px;
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+}
+.company-main .companyPhoto .banner-photo:last-child {
+  margin-right: 0;
+}

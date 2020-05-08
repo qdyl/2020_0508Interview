@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/company.css">
+  </head>
+
+  <body>
+    <!-- 头部 -->
+    <header class="back-header">
+      <i class="back-icon" onclick="history.go(-1)"></i>
+      <h5 class="header-title">创智何宇</h5>
+    </header>
+    <!-- 主体 -->
+    <main class="company-main container-fluid">
+      <!-- 部分一：公司福利相关 -->
+      <section class=" ">
+        <!-- 公司名字、logo -->
+        <div class="name-logo clearfix">
+          <div class="name float-left">
+            <h4>创智和宇</h4>
+            <small class="nameInfo">已上市</small>
+            <small class="nameInfo">1000人以上</small>
+            <small class="nameInfo">互联网</small>
+          </div>
+          <div class="logoImg float-right noLeftPadding">
+            <img src="./images/logo.jpg" alt="" />
+          </div>
+        </div>
+        <!-- 福利 -->
+        <div class="companyWelfare clearfix">
+          <span class="float-left workTime">上午8:30-下午5:30</span>
+          <span class="float-right moreWelfare">更多福利</span>
+        </div>
+        <!-- 工作时间 -->
+        <div class="workingTime">
+          <span class="comSpan dayOff">双休</span>
+          <span class="comSpan overtime">偶尔加班</span>
+        </div>
+        <!-- 轮播：福利 -->
+        <ul class="welfare-banner">
+          <li class="welfare-item">
+            <img src="./images/icon1.png" alt="" /><span>五险一金</span>
+          </li>
+          <li class="welfare-item">
+            <img src="./images/icon1.png" alt="" />补充医疗保险
+          </li>
+          <li class="welfare-item">
+            <img src="./images/icon1.png" alt="" />定期体检
+          </li>
+          <li class="welfare-item">
+            <img src="./images/icon1.png" alt="" />加班补助
+          </li>
+          <li class="welfare-item">
+            <img src="./images/icon1.png" alt="" />年终奖
+          </li>
+          <li class="welfare-item">
+            <img src="./images/icon1.png" alt="" />带薪年假
+          </li>
+          <li class="welfare-item">
+            <img src="./images/icon1.png" alt="" />员工旅游
+          </li>
+          <li class="welfare-item">
+            <img src="./images/icon1.png" alt="" />免费班车
+          </li>
+          <li class="welfare-item">
+            <img src="./images/icon1.png" alt="" />包午餐
+          </li>
+          <li class="welfare-item">
+            <img src="./images/icon1.png" alt="" />节日福利
+          </li>
+        </ul>
+      </section>
+      <!-- 部分二：公司介绍 -->
+      <section class="aboutCompany">
+        <h4>公司介绍</h4>
+        <div class="companyInfo">
+          创智和宇是一家专业的行业软件开发商和综合IT服务提供商，专注于政府民生工程信息化领域，涵盖社会保障、医疗卫生、人力资源、劳动就业等政府民生行业。先后在湖南、湖北、北京、广东、青海等10余省份共承建各类民生信息化项目500多个。迄今为止，拥有项目实施成功率100%的骄人记录。
+          创智和宇是国家“金保工程”指定承建商。公司管理规范，先后通过ISO9001：2000质量认证、CMMI5国际软件成熟度模型认证，获得长沙高新技术企业、软件企业、重合同守信用企业等各类资质证书。
+          创智和宇公司现有员工700多人，其中研究人员与软件开发人员占43%，项目实施、服务人员占40%，系统集成与技术支持人员10%，市场及商务支持人员占17%。90%以上的员工具有大学本科以上学历。
+        </div>
+        <span class="companyInfoMore">阅读全文</span>
+      </section>
+
+      <!-- 部分三：公司照片 -->
+      <section class="companyPhoto">
+        <h4>公司照片</h4>
+         <ul class="companyPhoto-banner">
+             <li class="banner-photo"><img src="./images//banner1.jpg" alt=""></li>
+             <li class="banner-photo"><img src="./images//banner2.jpg" alt=""></li>
+             <li class="banner-photo"><img src="./images//banner3.jpg" alt=""></li>
+             <li class="banner-photo"><img src="./images//banner4.jpg" alt=""></li>
+         </ul>
+
+
+      </section>
+      <!-- 公司地址 -->
+      <!-- 公司官网 -->
+      <!-- 工商信息 -->
+    </main>
+    <!-- 底部弹出的职位列表 -->
+    <footer class="footer-jobList"></footer>
+  </body>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script>
+    // 轮播福利
+    $(function () {
+      $(".welfare-banner").slick({
+        autoplay: false,
+        slidesToShow: 3,
+        //slidesToScroll: 1,
+        speed: 300,
+        slide: "li",
+        dots: false,
+        arrows: false,
+        infinite: false,
+      });
+      // 公司照片轮播
+      $('.companyPhoto-banner').slick({
+        slide: "li",
+        dots: true,
+        infinite: true,
+        arrows: false,
+
+      })
+
+    });
+  </script>
+</html>
