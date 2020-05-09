@@ -43,54 +43,17 @@ a {
 
 // 2、公司页面
 
-.back-header {
-    position: fixed;
-    z-index: 9;
-    width: calc(100vw - 20px);
-    max-width: 768px;
-    padding: 0 10px;
-    height: 40px;
-    // line-height: 40px;
-    background-color: #050409;
-    border-bottom: 1px solid rgba(255, 255, 255, .2);
-    color: #fff;
-    text-align: center;
-
-    .header-title {
-        display: inline-block;
-        margin: 0;
-        line-height: 40px;
-    }
-
-    .back-icon {
-        position: absolute;
-        left: 0;
-        width: 40px;
-        height: 40px;
-        display: inline-block;
-    }
-
-    .back-icon:before {
-        position: absolute;
-        top: 15px;
-        display: inline-block;
-        content: '';
-        width: 10px;
-        height: 10px;
-        border-top: 1.5px solid #fff;
-        border-right: 1.5px solid #fff;
-        transform: rotate(225deg);
-    }
-}
 // 二、主体
 .company-main {
 
-    padding: 40px 15px;
+    padding: 0 15px 70px;
     color: #fff;
     background-color: rgba(0,0,0,.82);
     min-height: 100vh;
     position: relative;
     z-index: 5;
+    height: calc(100vh - 70px);
+    overflow: auto;
     // 公用  h3 标签样式
     .common-company-h3-tit{
         margin-bottom: 10px;
@@ -99,7 +62,7 @@ a {
 
     // 公司名字、logo
     .name-logo {
-        margin-top: 20px;
+        padding-top: 20px;
 
         h3 {
             margin-bottom: 6px;
@@ -379,7 +342,7 @@ a {
     border-top-right-radius: 15px;
     position: fixed;
     z-index: 20;
-    bottom: 50px;
+    bottom: 52px;
     width: calc(100vw - 20px);
     max-width: 768px;
     height: calc(100vh - 60px);
@@ -388,6 +351,10 @@ a {
     transition: all .5s;
     &.footerJob_list_pop{
         transform: translateY(0);
+        bottom: 0;
+    }
+    &.footerJob_list_hide{
+        transform: translateY(100%);
         bottom: 0;
     }
     &::after{
@@ -403,7 +370,7 @@ a {
         border-radius: 20px;
     }
     .jobNum-box{
-        padding-top: 10px;
+        padding-top: 20px;
         padding-bottom: 4px;
         border-bottom: 1px solid #EDEDED;
         .jobNum{
@@ -520,7 +487,7 @@ a {
             font-size: 13px;
             display: none;
             color: #1F1F1F;
-            height: calc(100vh - 141px);
+            height: calc(100vh - 131px);
             background-color: rgba(0,0,0,.15);
         }
         .sub-items-text{
