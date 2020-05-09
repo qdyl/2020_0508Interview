@@ -379,12 +379,17 @@ a {
     border-top-right-radius: 15px;
     position: fixed;
     z-index: 20;
-    top: 60px;
-    bottom: 0;
+    bottom: 50px;
     width: calc(100vw - 20px);
     max-width: 768px;
     height: calc(100vh - 60px);
+    transform: translateY(100%);
     background-color: #fff;
+    transition: all .5s;
+    &.footerJob_list_pop{
+        transform: translateY(0);
+        bottom: 0;
+    }
     &::after{
         content: '';
         position: absolute;
@@ -398,7 +403,7 @@ a {
         border-radius: 20px;
     }
     .jobNum-box{
-        margin-top: 10px;
+        padding-top: 10px;
         padding-bottom: 4px;
         border-bottom: 1px solid #EDEDED;
         .jobNum{
@@ -456,6 +461,20 @@ a {
         }
         .checkedOn{
             .jobType{
+                color: #161616;
+            }
+            .downIcon{
+                &::before{ 
+                    top: 7px;
+                    transform: rotate(-45deg);
+                }
+            }
+
+        }
+        .checked_text{
+            .jobType{
+                position: relative;
+                top: 2px;
                 overflow: hidden;
                 display: inline-block;
                 max-width: 60px;
@@ -465,9 +484,8 @@ a {
             .downIcon{
                 &::before{ 
                     top: 4px;
-                    transform: rotate(-45deg);
+                    transform: rotate(135deg);
                 }
-               
             }
 
         }
@@ -492,7 +510,7 @@ a {
     // 部分2：刷选的下拉
     .sub-brushSelect-list{
         position: absolute;
-        top: 84px;
+        top: 81px;
         left: 0;
         z-index: 5;
         width: 100%;
@@ -566,7 +584,7 @@ a {
                 vertical-align: middle;
             }
             .icon-cirlce{
-                margin: 0 5px;
+                margin: 0 3px;
             }
             
         }

@@ -320,12 +320,17 @@ a {
   border-top-right-radius: 15px;
   position: fixed;
   z-index: 20;
-  top: 60px;
-  bottom: 0;
+  bottom: 50px;
   width: calc(100vw - 20px);
   max-width: 768px;
   height: calc(100vh - 60px);
+  transform: translateY(100%);
   background-color: #fff;
+  transition: all 0.5s;
+}
+.footer-jobList-wrap.footerJob_list_pop {
+  transform: translateY(0);
+  bottom: 0;
 }
 .footer-jobList-wrap::after {
   content: '';
@@ -340,7 +345,7 @@ a {
   border-radius: 20px;
 }
 .footer-jobList-wrap .jobNum-box {
-  margin-top: 10px;
+  padding-top: 10px;
   padding-bottom: 4px;
   border-bottom: 1px solid #EDEDED;
 }
@@ -394,15 +399,24 @@ a {
   width: 0;
 }
 .footer-jobList-wrap .brushSelettion-list .checkedOn .jobType {
+  color: #161616;
+}
+.footer-jobList-wrap .brushSelettion-list .checkedOn .downIcon::before {
+  top: 7px;
+  transform: rotate(-45deg);
+}
+.footer-jobList-wrap .brushSelettion-list .checked_text .jobType {
+  position: relative;
+  top: 2px;
   overflow: hidden;
   display: inline-block;
   max-width: 60px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.footer-jobList-wrap .brushSelettion-list .checkedOn .downIcon::before {
+.footer-jobList-wrap .brushSelettion-list .checked_text .downIcon::before {
   top: 4px;
-  transform: rotate(-45deg);
+  transform: rotate(135deg);
 }
 .footer-jobList-wrap .brushSelettion-list .downIcon {
   position: relative;
@@ -421,7 +435,7 @@ a {
 }
 .footer-jobList-wrap .sub-brushSelect-list {
   position: absolute;
-  top: 84px;
+  top: 81px;
   left: 0;
   z-index: 5;
   width: 100%;
@@ -489,7 +503,7 @@ a {
   vertical-align: middle;
 }
 .footer-jobList-wrap .jobList-box .about-hr .icon-cirlce {
-  margin: 0 5px;
+  margin: 0 3px;
 }
 .backgroundBlur {
   position: fixed;

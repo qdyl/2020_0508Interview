@@ -129,7 +129,7 @@
     <ul class="sub-brushSelect-list" >
       <li class="sub-brush-item">
        <div class="sub-items-text">
-        <p class="item-tit">全部</p>
+        <p class="item-tit tit_first_selected">全部</p>
         <p class="item-tit tit_selected">技术</p>
         <p class="item-tit tit_selected">产品</p>
         <p class="item-tit tit_selected">运营</p>
@@ -151,14 +151,14 @@
       </li>
       <li class="sub-brush-item">
         <div class="sub-items-text">
-          <p class="item-tit">全部</p>
+          <p class="item-tit tit_first_selected">全部</p>
           <p class="item-tit tit_selected">长沙</p>
           <p class="item-tit tit_selected">上海</p>
           <p class="item-tit tit_selected">深圳</p>
         </div>
       </li>  <li class="sub-brush-item">
          <div class="sub-items-text">
-          <p class="item-tit">全部</p>
+          <p class="item-tit tit_first_selected">全部</p>
           <p class="item-tit tit_selected">在校生</p>
           <p class="item-tit tit_selected">1年以内</p>
           <p class="item-tit tit_selected">1-3年</p>
@@ -170,7 +170,7 @@
     </li>  
     <li class="sub-brush-item">
        <div class="sub-items-text">
-        <p class="item-tit">不限</p>
+        <p class="item-tit tit_first_selected">不限</p>
         <p class="item-tit tit_selected">3K以下</p>
         <p class="item-tit tit_selected">3-5K</p>
         <p class="item-tit tit_selected">5-10K</p>
@@ -315,15 +315,15 @@
  window.onload = initMap;
 
   /* 5、底部弹出的职位列表（一级刷选） */
-  $('.brushSelettion-list').on('click','.brushSelect-item',function(){
-    
+  $('.brushSelettion-list').on('click','.brushSelect-item',function(e){
+    var target = $(e.target);
     var index = $(this).index();
-    $('.sub-brush-item').eq(index).slideToggle()
+    $('.sub-brush-item').eq(index).slideToggle(500)
     $('.sub-brush-item').eq(index).siblings().hide(0);
-   
-    // $('.sub-brush-item').siblings().hide(0).eq(index).slideToggle(400);
-   
-    // $(this).toggleClass('checkedOn')
+    $(this).toggleClass('checkedOn').siblings('.brushSelect-item').removeClass('checkedOn')
+    // if(!$(this).hasClass('checkedHover')){
+    //   $(this).addClass('checkedHover')
+    // };
   });
 
   /*6、底部弹出的职位列表（二级刷选）*/
@@ -333,12 +333,50 @@
     if(target.hasClass('tit_selected')){
       var _index = target.closest('.sub-brush-item').index();
       var _text = e.target.innerText
-      $('.brushSelect-item').eq(_index).find('.jobType').text(_text)
+      $('.brushSelect-item').eq(_index).find('.jobType').text(_text);
+      // $('.brushSelect-item').eq(_index).toggleClass('checked_text').removeClass('checkedOn');
+      // $('.brushSelect-item').eq(_index).toggleClass('checked_text');
+    }else if(target.hasClass('tit_first_selected')){
+      var _index = target.closest('.sub-brush-item').index();
+      if(_index === 0){
+        $('.brushSelect-item').eq(_index).find('.jobType').text('推荐');
+      }else if(_index === 1){
+        $('.brushSelect-item').eq(_index).find('.jobType').text('城市');
+      }else if(_index === 2){
+        $('.brushSelect-item').eq(_index).find('.jobType').text('经验');
+      }else if(_index === 3){
+        $('.brushSelect-item').eq(_index).find('.jobType').text('薪资');
+      }
+
     }
+    $('.brushSelect-item').eq(_index).toggleClass('checked_text').removeClass('checkedOn');
     $('.sub-brush-item').slideUp()
+  });
+
+  /*7、弹出底部的职位列表*/
+  $('.footer-jobList-wrap').on('click','.jobNum-box',function(){
+    $('.footer-jobList-wrap').toggleClass('footerJob_list_pop')
+  });
+
+  /*8、滑动页面的时候，底部弹起的职位列表隐藏*/
+  // $(document).scroll(function(){
+  //   let theY = $(document).scrollTop();
+  //   console.log(theY)
+  // });
 
 
-  })
+  // touch事件
+  // $("body").on("touchstart", function(e) {
+  //   e.preventDefault();
+  // });
+
+  // $("body").on("touchend", function(e) {
+  //   e.preventDefault();
+  // });
+
+  // $("body").on("touchmove", function(e) {
+  //   e.preventDefault();
+  // });
 
 
   </script>
