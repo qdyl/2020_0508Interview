@@ -43,16 +43,16 @@
       <!-- 福利：swiper轮播 -->
       <div class="swiper-container welfare-banner" id="swiper1">
         <div class="swiper-wrapper ">
-          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>五险一金</span></div>
-          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>补充医疗保险</span></a></div>
-          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>定期体检</span></div>
-          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>加班补助</span></div>
-          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>年终奖</span></div>
-          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>带薪年假</span></div>
-          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>员工旅游</span></div>
-          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>定期体检</span></div>
-          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>免费班车</span></div>
-          <div class="swiper-slide welfare-item"> <img src="./images/icon2.png" alt="" /><span>节日福利</span></div>
+          <div class="swiper-slide welfare-item"><span>五险一金</span></div>
+          <div class="swiper-slide welfare-item"><span>补充医疗保险</span></a></div>
+          <div class="swiper-slide welfare-item"><span>定期体检</span></div>
+          <div class="swiper-slide welfare-item"><span>加班补助</span></div>
+          <div class="swiper-slide welfare-item"><span>年终奖</span></div>
+          <div class="swiper-slide welfare-item"><span>带薪年假</span></div>
+          <div class="swiper-slide welfare-item"><span>员工旅游</span></div>
+          <div class="swiper-slide welfare-item"><span>定期体检</span></div>
+          <div class="swiper-slide welfare-item"><span>免费班车</span></div>
+          <div class="swiper-slide welfare-item"><span>节日福利</span></div>
       </div>
     </div>
     </section>
@@ -290,12 +290,12 @@
     slidesPerView : 3,
     centeredSlides : true,
     centeredSlidesBounds: true,
+    slidesOffsetAfter : 110,
   });     
   
   /*1、公司官网：轮播 */
   var mySwiper2 = new Swiper('#swiper2',{
     slidesPerView : 1.5,
-    // slidesOffsetAfter : 50,
     spaceBetween : 10,
     preventClicksPropagation : false,
     on:{
@@ -404,39 +404,51 @@
   });
 
   /*8、页面滚动的时候，底部弹起的职位列表隐藏（进行防抖处理）*/
-  var _fnPopFooterJobLists = _fnDebounce(_fnPopFooterJobList, 200);
-  
-  $('.company-main').scroll(function(){
-    _fnPopFooterJobLists()
+  // var _fnPopFooterJobLists = _fnDebounce(_fnPopFooterJobList, 10);
+  // $('.company-main').scroll(function(){
+  //   if (!isScrollFlag) {
+  //     isScrollFlag = true;
+  //     e.preventDefault();
+  //     _fnPopFooterJobLists()
+  //   }
+  // });
+  // function _fnPopFooterJobList(){
+  //   var theY = $(document).scrollTop();
+  //   var clientHeight = $('.company-main').outerHeight(); 
+  //   var scrollTop1 = document.getElementsByClassName('company-main')[0].scrollTop; //  到头部的距离
+  //   var scrollHeight = document.getElementsByClassName('company-main')[0].scrollHeight; // 滚动条的总高度
+  //   console.log('scrollTop',scrollTop1)
+  //   if((clientHeight + scrollTop1 + 20) < scrollHeight){
+  //     $('.footer-jobList-wrap').addClass('footerJob_list_hide')
+  //   }else if((clientHeight + scrollTop1 + 20) >= scrollHeight){
+  //     $('.footer-jobList-wrap').removeClass('footerJob_list_hide');
+  //   }
+  // }
+
+  /*9、页面touch的时候，底部弹起的职位列表隐藏和显示*/
+  var touchStartY,touchEndY;
+  $(".company-main").on("touchstart", function(e) {
+    // e.preventDefault();
+    // e.stopPropagation();
+    touchStartY = e.touches[0].pageY;
   });
-  function _fnPopFooterJobList(){
-    var theY = $(document).scrollTop();
+  
+  $(".company-main").on("touchmove", function(e) {
+    touchEndY = e.touches[0].pageY
+    if((touchEndY - touchStartY)<0){
+      $('.footer-jobList-wrap').addClass('footerJob_list_hide')
+    }else if((touchEndY - touchStartY)>10 ){
+      $('.footer-jobList-wrap').removeClass('footerJob_list_hide')
+    }
+    // 05.11 开始
     var clientHeight = $('.company-main').outerHeight(); 
     var scrollTop1 = document.getElementsByClassName('company-main')[0].scrollTop; //  到头部的距离
     var scrollHeight = document.getElementsByClassName('company-main')[0].scrollHeight; // 滚动条的总高度
-    console.log('scrollTop',scrollTop1)
-    if((clientHeight + scrollTop1 + 20) < scrollHeight){
-      $('.footer-jobList-wrap').addClass('footerJob_list_hide')
-    }else if((clientHeight + scrollTop1 + 20) >= scrollHeight){
+    if((clientHeight + scrollTop1 + 20) >= scrollHeight){
       $('.footer-jobList-wrap').removeClass('footerJob_list_hide');
     }
-  }
-
-  /*9、页面touch的时候，底部弹起的职位列表隐藏和显示*/
-  // var touchStartY,touchEndY;
-  // $(".company-main").on("touchstart", function(e) {
-  //   e.preventDefault();
-  //   // e.stopPropagation();
-  //   touchStartY = e.touches[0].pageY
-  //   console.log("开始滑动",touchStartY)
-  // });
-  
-  // $(".company-main").on("touchmove", function(e) {
-  //   e.preventDefault();
-  //   // e.stopPropagation();
-  //   touchEndY = e.touches[0].pageY
-  //   console.log('滑动中',touchEndY)
-  // });
+    // 05.11 结束
+  });
 
   // $(".company-main").on("touchend", function(e) {
   //   // e.preventDefault();
