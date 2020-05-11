@@ -49,7 +49,7 @@ a {
     padding: 0 15px 70px;
     color: #fff;
     background-color: rgba(0,0,0,.82);
-    min-height: 100vh;
+    // min-height: 100vh;
     position: relative;
     z-index: 5;
     height: calc(100vh - 70px);
@@ -83,7 +83,7 @@ a {
                 display: inline-block;
                 position: absolute;
                 right: 0px;
-                top: 8px;
+                top: 6px;
                 content: '';
                 width: 4px;
                 height: 4px;
@@ -261,6 +261,7 @@ a {
            
 
         }
+     
     }
     // 部分4：公司地址
     .companyAddress{
@@ -474,10 +475,22 @@ a {
            
         }
     }
+    .brushSelect-job-loading{
+        display: none;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        .imgBrushJob{
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+        }
+    }
     // 部分2：刷选的下拉
     .sub-brushSelect-list{
         position: absolute;
-        top: 81px;
+        top: 96px;
         left: 0;
         z-index: 5;
         width: 100%;
@@ -506,7 +519,7 @@ a {
     // 部分3、职位列表
     .jobList-box{
         .jobList-content{
-            height: calc(100vh - 160px);
+            height: calc(100vh - 180px);
             overflow: auto;
         }
         .job-list-item{
@@ -518,6 +531,10 @@ a {
         }
         .job-name{
             .name{
+                width: 160px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow:ellipsis;
                 line-height: 24px;
                 color: #242424;
                 letter-spacing: 1px;
@@ -555,6 +572,14 @@ a {
             }
             
         }
+        .jobList-loading{
+            display: none;
+            text-align: center;
+            img{
+                width: 26px;
+                height: 26px;
+            }
+        }
     }
 }
 
@@ -581,7 +606,28 @@ a {
     }
 
 }
+// 五、
+.amplification-bannerImg{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 6;
+    background-color: rgba(0,0,0,1);
+    img{
+        position: absolute;
+        z-index: 7;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        width: 100vw;
+        height: 200px;
 
+    }
+
+}
 // 媒体查询
 @media (min-width:769px) {
     // 头部

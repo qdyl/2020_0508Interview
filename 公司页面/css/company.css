@@ -41,7 +41,6 @@ a {
   padding: 0 15px 70px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.82);
-  min-height: 100vh;
   position: relative;
   z-index: 5;
   height: calc(100vh - 70px);
@@ -71,7 +70,7 @@ a {
   display: inline-block;
   position: absolute;
   right: 0px;
-  top: 8px;
+  top: 6px;
   content: '';
   width: 4px;
   height: 4px;
@@ -404,9 +403,21 @@ a {
   border-right: 1px solid #AAAAAA;
   transform: rotate(135deg);
 }
+.footer-jobList-wrap .brushSelect-job-loading {
+  display: none;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.footer-jobList-wrap .brushSelect-job-loading .imgBrushJob {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
 .footer-jobList-wrap .sub-brushSelect-list {
   position: absolute;
-  top: 81px;
+  top: 96px;
   left: 0;
   z-index: 5;
   width: 100%;
@@ -432,7 +443,7 @@ a {
   font-weight: 600;
 }
 .footer-jobList-wrap .jobList-box .jobList-content {
-  height: calc(100vh - 160px);
+  height: calc(100vh - 180px);
   overflow: auto;
 }
 .footer-jobList-wrap .jobList-box .job-list-item {
@@ -443,6 +454,10 @@ a {
   border-bottom: none;
 }
 .footer-jobList-wrap .jobList-box .job-name .name {
+  width: 160px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   line-height: 24px;
   color: #242424;
   letter-spacing: 1px;
@@ -476,6 +491,14 @@ a {
 .footer-jobList-wrap .jobList-box .about-hr .icon-cirlce {
   margin: 0 3px;
 }
+.footer-jobList-wrap .jobList-box .jobList-loading {
+  display: none;
+  text-align: center;
+}
+.footer-jobList-wrap .jobList-box .jobList-loading img {
+  width: 26px;
+  height: 26px;
+}
 .backgroundBlur {
   position: fixed;
   top: -40px;
@@ -498,6 +521,25 @@ a {
   filter: blur(5px);
   /*为了模糊更明显，调高模糊度*/
   z-index: 2;
+}
+.amplification-bannerImg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 6;
+  background-color: #000000;
+}
+.amplification-bannerImg img {
+  position: absolute;
+  z-index: 7;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100vw;
+  height: 200px;
 }
 @media (min-width: 769px) {
   .back-header {

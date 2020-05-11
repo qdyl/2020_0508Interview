@@ -77,7 +77,6 @@
           <li class="swiper-slide banner-photo"><img src="./images//banner3.jpg" alt=""></li>
           <li class="swiper-slide banner-photo"><img src="./images//banner4.jpg" alt=""></li>
         </ul>
-
       </div>
       
     </section>
@@ -113,14 +112,18 @@
   <!-- 三、底部弹出的职位列表 -->
   <footer class="footer-jobList-wrap">
     <div class="jobNum-box"><span class="jobNum">职位<small class="small-num">7456</small></span></div>
-    <!-- 部分1、职位刷选 -->
-    <ul class="brushSelettion-list">
-      <li class="brushSelect-item"><span class="jobType">推荐</span><i class="downIcon"></i></li>
-      <li class="brushSelect-item"><span class="jobType">城市</span><i class="downIcon"></i></li>
-      <li class="brushSelect-item"><span class="jobType">经验</span><i class="downIcon"></i></li>
-      <li class="brushSelect-item"><span class="jobType">薪资</span><i class="downIcon"></i></li>
-    </ul>
-    <!-- 部分2、刷选的下拉 -->
+    <!-- 部分1、职位刷选（一级） -->
+    <div class="brushSelettion-list-box">
+      <ul class="brushSelettion-list">
+        <li class="brushSelect-item"><span class="jobType">推荐</span><i class="downIcon"></i></li>
+        <li class="brushSelect-item"><span class="jobType">城市</span><i class="downIcon"></i></li>
+        <li class="brushSelect-item"><span class="jobType">经验</span><i class="downIcon"></i></li>
+        <li class="brushSelect-item"><span class="jobType">薪资</span><i class="downIcon"></i></li>
+      </ul>
+      <!-- 职位刷选 loading 图 -->
+      <div class="brushSelect-job-loading"><img class="imgBrushJob" src="./images/ajax-loader.gif" alt=""></div>
+    </div>
+    <!-- 部分2、职位刷选的下拉（二级） -->
     <ul class="sub-brushSelect-list" >
       <li class="sub-brush-item">
        <div class="sub-items-text">
@@ -258,16 +261,30 @@
           </div>
         </li>
       </ul>
+      <!-- 上滑加载更多职位 loading 图 -->
+      <div class="jobList-loading"><img src="./images/ajax-loader.gif" alt=""></div>
     </section>
   </footer>
   <!-- 四、背景模糊 -->
   <div class="backgroundBlur"></div>
+   <!-- 五、点击轮播图进行放大 -->
+   <div class="amplification-bannerImg"><img src="./images//banner1.jpg" alt=""></div>
+ 
 </body>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/swiper.min.js"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=tfyPSxoXaqxjucWTglxK7R1jWkW8OlO6"></script>
 
 <script> 
+  // 公用：防抖函数
+  function _fnDebounce(fn, wait){
+    var timeout = null;
+    return function() {
+      if(timeout !== null)
+        clearTimeout(timeout);
+      timeout = setTimeout(fn, wait);
+    }
+  };
   // 0、公司福利：轮播
   var mySwiper1 = new Swiper ('#swiper1', {
     slidesPerView : 3,
@@ -280,9 +297,14 @@
     slidesPerView : 1.5,
     // slidesOffsetAfter : 50,
     spaceBetween : 10,
+    preventClicksPropagation : false,
     on:{
     click: function(e){
-      console.log('你点击了图片',e)
+      var bannerImgUrl =  $(e.target).attr('src')
+      e.stopPropagation();
+      $('.amplification-bannerImg').show(50).find('img').attr('src',bannerImgUrl);
+
+      $('.footer-jobList-wrap').addClass('footerJob_list_hide')
     },
   },
   });   
@@ -296,8 +318,8 @@
   /* 3、查看工商信息 */
   $('.commericalInfo-more').click(function(){
     $('.commercialSlideDown').fadeIn()
-    $(this).hide();
-    $(document).scrollTop($(document).height());
+    $(this).hide();    
+    $('.company-main').scrollTop($(document).height()+100);
   })
 
   /* 4、百度地图 */
@@ -321,12 +343,9 @@
     $('.sub-brush-item').eq(index).slideToggle(500)
     $('.sub-brush-item').eq(index).siblings().hide(0);
     $(this).toggleClass('checkedOn').siblings('.brushSelect-item').removeClass('checkedOn')
-    // if(!$(this).hasClass('checkedHover')){
-    //   $(this).addClass('checkedHover')
-    // };
   });
 
-  /*6、底部弹出的职位列表（二级刷选）*/
+  /*6、底部弹出的职位列表（二级刷选）：*/
   $('.sub-brushSelect-list').on('click','.sub-brush-item',function(e){
     var target = $(e.target);
     console.log(target)
@@ -334,8 +353,29 @@
       var _index = target.closest('.sub-brush-item').index();
       var _text = e.target.innerText
       $('.brushSelect-item').eq(_index).find('.jobType').text(_text);
-      // $('.brushSelect-item').eq(_index).toggleClass('checked_text').removeClass('checkedOn');
-      // $('.brushSelect-item').eq(_index).toggleClass('checked_text');
+      var _data = []; // 点选的数据
+      $('.brushSelect-item').each(function(){
+        _data.push($(this).find('.jobType').text())
+      })
+      $.ajax({
+        url:'./js/jobList.json',
+        type:'GET',
+        data:_data,
+        beforeSend(){
+          $('.brushSelect-job-loading').show();
+        },
+        success(data){
+          //  todo something 
+        },
+        error(err){
+          console.log(err)
+        },
+        complete(){
+          setTimeout(function(){
+            $('.brushSelect-job-loading').hide();
+          },3000)
+        },
+      })
     }else if(target.hasClass('tit_first_selected')){
       var _index = target.closest('.sub-brush-item').index();
       if(_index === 0){
@@ -347,73 +387,116 @@
       }else if(_index === 3){
         $('.brushSelect-item').eq(_index).find('.jobType').text('薪资');
       }
-
     }
-    $('.brushSelect-item').eq(_index).toggleClass('checked_text').removeClass('checkedOn');
+    $('.brushSelect-item').eq(_index).addClass('checked_text').removeClass('checkedOn');
     $('.sub-brush-item').slideUp()
   });
 
   /*7、弹出底部的职位列表*/
   $('.footer-jobList-wrap').on('click','.jobNum-box',function(){
-    $('.footer-jobList-wrap').toggleClass('footerJob_list_pop')
+    $('.footer-jobList-wrap').toggleClass('footerJob_list_pop');
+    // 滚动上层职位列表页的时候，禁止滚动下层页面
+    if($('.footer-jobList-wrap').hasClass('footerJob_list_pop')){
+      $('.company-main').css({overflow:'hidden'})
+    }else{
+      $('.company-main').css({overflow:'auto'})
+    }
   });
 
-  /*8、滑动页面的时候，底部弹起的职位列表隐藏*/
-  // $(document).scroll(function(){
-  //   var theY = $(document).scrollTop();
-  //   var clientHeight = document.documentElement.clientHeight || document.body.clientHeight; // 设备高度
-  //   var scrollTop = document.documentElement.scrollTop; //  到头部的距离
-  //   var scrollHeight = document.documentElement.scrollHeight; // 滚动条的总高度
-  //   console.log('滚动中',clientHeight,scrollTop,scrollHeight)
-
-  //   if(scrollTop > 0 && clientHeight + scrollTop < scrollHeight){
-  //     $('.footer-jobList-wrap').addClass('footerJob_list_hide')
-  //   }else if(clientHeight + scrollTop >= scrollHeight){
-  //     $('.footer-jobList-wrap').removeClass('footerJob_list_hide');
-  //   }
-  // });
-  // 临时 - 开始
+  /*8、页面滚动的时候，底部弹起的职位列表隐藏（进行防抖处理）*/
+  var _fnPopFooterJobLists = _fnDebounce(_fnPopFooterJobList, 200);
+  
   $('.company-main').scroll(function(){
+    _fnPopFooterJobLists()
+  });
+  function _fnPopFooterJobList(){
     var theY = $(document).scrollTop();
-    var clientHeight = $('.company-main').outerHeight(); // 设备高度
-    var scrollTop = document.getElementsByClassName('company-main')[0].scrollTop; //  到头部的距离
+    var clientHeight = $('.company-main').outerHeight(); 
+    var scrollTop1 = document.getElementsByClassName('company-main')[0].scrollTop; //  到头部的距离
     var scrollHeight = document.getElementsByClassName('company-main')[0].scrollHeight; // 滚动条的总高度
-    console.log('滚动中',clientHeight,scrollTop,scrollHeight,$('.company-main').outerHeight())
-
-    if(scrollTop > 0 && clientHeight + scrollTop < scrollHeight){
+    console.log('scrollTop',scrollTop1)
+    if((clientHeight + scrollTop1 + 20) < scrollHeight){
       $('.footer-jobList-wrap').addClass('footerJob_list_hide')
-    }else if(Math.ceil(clientHeight + scrollTop) >= scrollHeight){
+    }else if((clientHeight + scrollTop1 + 20) >= scrollHeight){
       $('.footer-jobList-wrap').removeClass('footerJob_list_hide');
     }
-  });
-  // --- 结束
+  }
+
+  /*9、页面touch的时候，底部弹起的职位列表隐藏和显示*/
+  // var touchStartY,touchEndY;
+  // $(".company-main").on("touchstart", function(e) {
+  //   e.preventDefault();
+  //   // e.stopPropagation();
+  //   touchStartY = e.touches[0].pageY
+  //   console.log("开始滑动",touchStartY)
+  // });
   
+  // $(".company-main").on("touchmove", function(e) {
+  //   e.preventDefault();
+  //   // e.stopPropagation();
+  //   touchEndY = e.touches[0].pageY
+  //   console.log('滑动中',touchEndY)
+  // });
+
+  // $(".company-main").on("touchend", function(e) {
+  //   // e.preventDefault();
+  //   // e.stopPropagation();
+  //   // 下滑动
+  //   if((touchEndY - touchStartY)<0){
+  //     console.log('向下滑动')
+  //     $('.footer-jobList-wrap').addClass('footerJob_list_hide')
+  //   }else if((touchEndY - touchStartY)>0){
+  //     $('.footer-jobList-wrap').removeClass('footerJob_list_hide')
+  //   }
+  // });
 
 
-  // touch事件
-  var touchStartY,touchEndY;
-  $(".company-main").on("touchstart", function(e) {
-    // e.preventDefault();
-    touchStartY = e.touches[0].pageY
-    console.log("开始滑动",touchStartY)
+  /* 10、隐藏放大的公司照片*/
+  $('.amplification-bannerImg').on('click',function(e){
+    // e.stopPropagation();
+    $('.amplification-bannerImg').css({display:'none'});
   });
-  
-  $(".company-main").on("touchmove", function(e) {
-    // e.preventDefault();
-    touchEndY = e.touches[0].pageY
-    console.log('滑动中',touchEndY)
-  });
 
-  $(".company-main").on("touchend", function(e) {
-    // e.preventDefault();
-    // 下滑动
-    if((touchEndY - touchStartY)<0){
-      console.log('向下滑动')
-      $('.footer-jobList-wrap').addClass('footerJob_list_hide')
-    }else{
-      $('.footer-jobList-wrap').removeClass('footerJob_list_hide')
+  /*11、下滑加载更多职位列表（进行防抖处理）*/
+  var _fnLoadingMoreJobList = _fnDebounce(_fnAjaxJobList, 500);
+  $('.jobList-content').scroll(function(){
+    var clientHeight_ = $('.jobList-content').outerHeight(); // 设备高度
+    var scrollTop_ = document.getElementsByClassName('jobList-content')[0].scrollTop; //  到头部的距离
+    var scrollHeight_ = document.getElementsByClassName('jobList-content')[0].scrollHeight; // 滚动条的总高度
+    // console.log('滚动中',clientHeight_,scrollTop_,scrollHeight_)
+    if((clientHeight_+ scrollTop_ + 20 ) > scrollHeight_ ){
+      _fnLoadingMoreJobList()
     }
   });
+
+
+  // 下滑加载更多职位列表
+  function _fnAjaxJobList(){
+    var _data = {};
+    $.ajax({
+      url:'./js/jobList.json',
+      type:'GET',
+      timeout:'3000',
+      data:_data,
+      beforeSend(){
+        $('.jobList-loading').show();
+      },
+      success(data){
+        // todo something
+      },
+      error(){
+        // $('.jobList-loading').hide();
+      },
+      complete(){
+        setTimeout(function (param) {  
+          $('.jobList-loading').hide();
+        },1000)
+      }
+    });
+  }
+  
+  /*12、*/
+
 
  
 
