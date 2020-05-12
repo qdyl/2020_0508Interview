@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/societyRecuiment.css">
+</head>
+<body>
+    <main class="societyRecruiment-main">
+        <!-- 加入我们 -->
+        <div class="top-info">
+            <strong>JOIN US</strong> <br>
+            <small>加入我们吧！</small>
+        </div>
+        <!-- 头部文本 -->
+        <section class="header-box">
+            <div class="header-tit-bg">
+                <p class="header-info"><span class="">无畏挑战</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="">急速成长</span></p>
+                <h2 class="header-tit">创智和宇校园招聘</h2>
+            </div>
+            <!-- 两个图片 -->
+            <!-- <ul class="list-boxs">
+                <li class="list-box-item"></li>
+                <li class="list-box-item itemOn"><img class="itemImg" src="./images/img01.jpg" alt=""></li>
+                <li class="list-box-item itemOn"><img class="itemImg" src="./images/img00.jpg" alt=""></li>
+                <li class="list-box-item"></li>
+            </ul> -->
+            <!-- 整个图片 -->
+            <div class="full-img-box">
+                <img src="./images/imgWork1.jpg" alt="" class="full-img">
+            </div>
+        </section>
+       
+        <!-- 底部按钮 -->
+        <div class="schoolRecruiment-list">
+            <a href="#" class="schoolRecruiment-item popLeftItem">校招秘籍</a>
+            <a href="#" class="schoolRecruiment-item">校招岗位</a>
+            <a href="#" class="schoolRecruiment-item">培养计划</a>
+            <a href="#" class="schoolRecruiment-item col-6">新生风采</a>
+            <a href="#" class="schoolRecruiment-item col-6">校园合伙人招募</a>
+        </div>
+    </main>
+    <!-- 二、左边弹出的二级菜单 -->
+    <aside class="left-aside ">
+        <div class="left-aside-items">
+            <a href="##" class="aside-item">面试流程</a>
+            <a href="##" class="aside-item">校招行程</a>
+            <a href="##" class="aside-item">校招Q&A</a>
+        </div>
+    </aside>
+</body>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script>
+     $().ready(function(){
+        //  弹出二级菜单
+        $('.popLeftItem').on('click',function(){
+            $('.left-aside').toggleClass('left-aside-show')
+        });
+        // 隐藏二级菜单
+        $('.left-aside').on('click',function(){
+            $('.left-aside').removeClass('left-aside-show')
+        })
+     })
+</script>
+</html>

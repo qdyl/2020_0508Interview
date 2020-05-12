@@ -1,0 +1,222 @@
+ /* 公共样式 */
+ *{
+    padding: 0;
+    margin: 0;
+}
+html{
+    background-color: #fff;
+}
+body {
+    position: relative;
+   max-width: 768px;
+   margin: 0 auto;
+//    height: 100vh;
+   background-color: #F2F2F2;
+}
+
+/*  重置样式 */
+ul,
+ol,
+li {
+   padding: 0;
+   margin: 0;
+   list-style-type: none;
+}
+
+a {
+   text-decoration: none;
+}
+/*  功能类名 */
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+@font-face
+{
+    font-family: myFirstFont;
+    src: url('../fonts/HongLeiBanShuJianTi-2.ttf');
+}
+// 一、校园招聘主体
+.schoolRecruiment-main{
+    position: relative;
+    width: 100vw;
+    max-width: 768px;
+    min-height: 100vh;
+    overflow: auto;
+    background-color: #31C2BF;
+    // background: #31C2BF url('../images/img01.jpg') no-repeat left top/100% 100%;
+    // 加入我们
+    .top-info{
+        padding: 15px 0 0 15px;
+        color: #fff;
+        small{
+            font-size: 10px;
+            letter-spacing: 1px;
+            line-height: 20px;
+            color: yellow;
+        }
+    }
+    // 头部文本
+    .header-box{
+        margin-top: 40px;
+        text-align: center;
+        color: #444;
+        .header-tit-bg{
+            // background: url(../images/img3.jpg) no-repeat center center/100% 300px;
+            .header-info{
+                letter-spacing: 2px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+            .header-tit{
+                margin-top: 10px;
+                letter-spacing: 4px;
+                font-family:myFirstFont;
+                font-size: 30px;
+            }
+
+        }
+      
+        .header-img{
+            margin-top: 10px;
+            width: 160px;
+            height: auto;
+        }
+        // 多个图片列表
+        // .list-boxs{
+        //     margin-top: 30px;
+        //     display: flex;
+        //     flex-wrap: wrap;
+        //     padding: 0 10px;
+
+        //     .list-box-item{
+        //         flex: 0 0 50%;
+        //         height: 120px;
+        //         &.itemOn{
+        //             background-color: #54d0ce;
+        //             border-radius: 10px;
+        //         }
+        //         .itemImg{
+        //             width: 100%;
+        //             height: 100%;
+        //             border-radius: 10px;
+        //             border: 1px solid #f5f5e7;
+        //         }
+        //     }
+        // }
+        // 整个图片
+        .full-img-box{
+            margin-top: 30px;
+            padding: 0 15px;
+            img{
+                width: 100%;
+                height: 200px;
+                border-radius: 10px;
+                border: 1px solid #d4d4d1;
+                // filter: blur(1px);
+                // filter: drop-shadow(6px 6px 2px green) invert(75%);
+                box-shadow: 5px 8px 5px #a4a4a4;
+
+            }
+        }
+    }
+
+    // 底部按钮
+    .schoolRecruiment-list{
+        margin-top: 30px;
+        // padding-bottom: 30px;
+        padding: 0 10px 30px;
+        width: calc(100% - 20px);
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        // padding: 0 10px;
+          // 媒体查询
+        @media ( max-width: 320px) {
+            bottom: -60px;
+        }
+    }
+    .schoolRecruiment-item{
+        flex: 0 1 31%;
+        margin-top: 15px;
+        background-color: #fff;
+        line-height: 40px;
+        background-color: #fff;
+        color: #444;
+        letter-spacing: 1px;
+        text-align: center;
+        font-size: 13px;
+        border-radius: 4px;
+        // &.popLeftItem{
+        //     position: relative;
+        //     &::after{
+        //         position: absolute;
+        //         right: 5px;
+        //         top: 12px;
+        //         content: '';
+        //         display: inline-block;
+        //         width: 15px;
+        //         height: 15px;
+        //         background: url('../images/iconMore3.png') no-repeat right center/15px 15px;
+        //     }
+        // }
+        &.col-6{
+            flex-basis: 47.5%;
+        }
+        // 媒体查询
+        @media ( max-width: 320px) {
+            flex: 0 1 32%;
+        }
+
+    }
+
+}
+
+// 二、侧边弹出的二级菜单
+.left-aside{
+    position: absolute;
+    top: 190px;
+    left: 0;
+    width: 100%;
+    // height: calc(100vh - 190px);
+    height: 210px;
+    background-color: rgba(0,0,0,.4);
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: all .5s;
+    &.left-aside-show{
+        transform: translateX(0);
+    }
+    .left-aside-items{
+        // padding-top: 15px;
+        width: 150px;
+        height:180px;
+        padding-top: 30px;
+        background-color: #fff;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+    .aside-item{
+        margin: 0 auto 15px;
+        display: block;
+        width: 80%;
+        line-height: 40px;
+        color: #fff;
+        background-color: #31c2bf;
+        text-align: center;
+        border-radius: 4px;
+        font-size: 13px;
+    }
+
+}

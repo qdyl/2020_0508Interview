@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/recommendPerson.css">
+</head>
+
+<body>
+
+    <!-- 一：主体 -->
+    <main class="recommendPerson-main">
+        <div class="recommendPerson-main-box">
+            <!-- 部分1、按钮(切换) -->
+            <h3 class="header-tit"><span class="tit-span">选择类型</span></h3>
+            <div class="checkHeader-item">
+                <span class="header-item header-itemOn">公司员工</span>
+                <span class="header-item">其他</span>
+            </div>
+            <!-- 部分2、表单信息填写(切换) -->
+            <section class="switching_form_box">
+                <form action="javascript:void(0)" class="commonForm" id="signupForm">
+                     <!-- 推荐人信息 -->
+                    <h3 class="commonName-tit"><span class="tit-span">推荐人信息</span></h3>
+                    <section class="recommonend-self-Info">
+                        <div class="commonInput-content nameInput-content clearfix">
+                            <label class="leftLabelTit" for="userName">姓名</label>
+                            <input id="userName" name="userName" class="commonInput " type="text" placeholder="请输入姓名">
+                        </div>
+                        <div class="commonInput-content telInput-content clearfix">
+                            <label class="leftLabelTit" for="telNum">电话</label>
+                            <input id="telNum" name="telNum" class="commonInput" type="text" placeholder="请输入电话">
+                        </div>
+                        <div class="commonInput-content jobNumInput-content isNoCompany_js clearfix">
+                            <label class="leftLabelTit" for="jobNum">工号</label>
+                            <input id="jobNum" name="jobNum" class="commonInput" type="text" placeholder="请输入工号">
+                        </div>
+                        <div class="commonInput-content departInput-content isNoCompany_js clearfix">
+                            <label class="leftLabelTit" for="department">所在部门</label>
+                            <input id="department" name="department" class="commonInput" type="text" placeholder="请输入所在部门">
+                        </div>
+                    </section>
+                    <!-- 被推荐人信息 -->
+                    <h3 class="commonName-tit"><span class="tit-span">被推荐人信息</span></h3>
+                    <div class="commonInput-content jobTypeInput-content clearfix">
+                        <label class="leftLabelTit" for="jobType">推荐岗位</label>
+                        <input id="jobType" name="jobType" class="commonInput" type="text" placeholder="请输入推荐岗位">
+                    </div>
+                    <div class="flieInput-content"><input class="fileInput" type="file" placeholder="上传被推荐人简历附件"></div>
+                    <span class="fileInput-info">上传被推荐人的简历附件</span>
+
+                </form>
+            </section>
+       </div>
+    </main>
+    <!-- 二、底部提交按钮 -->
+    <div class="footer-submit-btn"><span class="submitBtn">提交</span></div>
+
+</body>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script>
+   $().ready(function() {
+        // 1、按钮切换
+        $('.checkHeader-item').on('click', '.header-item', function () {
+            var index = $(this).index();
+            $(this).addClass('header-itemOn').siblings('.header-itemOn').removeClass('header-itemOn');
+            if(index === 1){
+                $('.recommonend-self-Info').find('.isNoCompany_js').slideUp();
+            }else{
+                $('.recommonend-self-Info').find('.isNoCompany_js').slideDown();
+            }
+        });
+        // 2、表单验证
+    })
+</script>
+
+</html>

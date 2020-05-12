@@ -1,0 +1,239 @@
+/* 公共样式 */
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  background-color: #fff;
+}
+body {
+  max-width: 768px;
+  margin: 0 auto;
+  background-color: #F2F2F2;
+}
+/*  重置样式 */
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+/*  功能类名 */
+.noPadding {
+  padding: 0;
+}
+.noLeftPadding {
+  padding-left: 0;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.recommendPerson-main {
+  padding: 0px 10px 0;
+  background-color: #F2F2F2;
+  position: relative;
+  z-index: 5;
+  min-height: 50vh;
+  overflow: auto;
+}
+.recommendPerson-main .recommendPerson-main-box {
+  padding: 10px;
+  background: #fff;
+}
+.recommendPerson-main .header-tit {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  color: #444;
+  letter-spacing: 1px;
+  font-size: 18px;
+  border-bottom: 1px solid #f7f7f7;
+}
+.recommendPerson-main .header-tit .tit-span {
+  position: relative;
+}
+.recommendPerson-main .header-tit .tit-span::after {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background-color: #bae7e7;
+  border-radius: 4px;
+}
+.recommendPerson-main .checkHeader-item {
+  font-size: 13px;
+}
+.recommendPerson-main .checkHeader-item .header-item {
+  margin-right: 15px;
+  padding: 4px 8px;
+  color: #2E2E2E;
+  border: 1px solid #E4E4E4;
+  border-radius: 4px;
+  display: inline-block;
+  width: 100px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.recommendPerson-main .checkHeader-item .header-itemOn {
+  color: #64BBB2;
+  border: 1px solid #64BBB2;
+}
+.recommendPerson-main .switching_form_box .commonForm .commonName-tit {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  color: #444;
+  letter-spacing: 1px;
+  font-size: 18px;
+  border-bottom: 1px solid #f7f7f7;
+}
+.recommendPerson-main .switching_form_box .commonForm .tit-span {
+  position: relative;
+}
+.recommendPerson-main .switching_form_box .commonForm .tit-span::after {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background-color: #bae7e7;
+  border-radius: 4px;
+}
+.recommendPerson-main .switching_form_box .commonInput-content {
+  position: relative;
+  background-color: #fff;
+  font-size: 13px;
+}
+.recommendPerson-main .switching_form_box .commonInput-content::before {
+  position: absolute;
+  left: 3px;
+  top: 4px;
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+.recommendPerson-main .switching_form_box .commonInput-content.nameInput-content::before {
+  background: url(../images/iconName111.png) no-repeat left center / 20px 20px;
+}
+.recommendPerson-main .switching_form_box .commonInput-content.telInput-content::before {
+  background: url(../images/iconTel111.png) no-repeat left center / 20px 20px;
+}
+.recommendPerson-main .switching_form_box .commonInput-content.jobNumInput-content::before {
+  background: url(../images/iconJobNum111.png) no-repeat left center / 20px 20px;
+}
+.recommendPerson-main .switching_form_box .commonInput-content.departInput-content::before {
+  background: url(../images/iconDepart111.png) no-repeat left center / 20px 20px;
+}
+.recommendPerson-main .switching_form_box .commonInput-content.jobTypeInput-content::before {
+  background: url(../images/iconJobType111.png) no-repeat left center / 20px 20px;
+}
+.recommendPerson-main .switching_form_box .commonInput-content .error {
+  padding-left: 10px;
+  font-size: 12px;
+  color: #fff;
+}
+.recommendPerson-main .switching_form_box .leftLabelTit {
+  float: left;
+  line-height: 36px;
+  padding-left: 30px;
+  width: 70px;
+}
+.recommendPerson-main .switching_form_box .commonInput {
+  float: right;
+  width: calc(100% - 110px);
+  height: 36px;
+  line-height: 35px;
+  outline: none;
+  border: none;
+}
+.recommendPerson-main .switching_form_box .flieInput-content {
+  position: relative;
+  margin-top: 10px;
+  width: 200px;
+  height: 130px;
+  border: 1px solid #bfbfbf;
+  background-color: #fff;
+  border-radius: 6px;
+}
+.recommendPerson-main .switching_form_box .flieInput-content::after {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 35px;
+  content: '';
+  display: inline-block;
+  background: url('../images/iconAddFile1.png') no-repeat center center / 35px 35px;
+}
+.recommendPerson-main .switching_form_box .flieInput-content .fileInput {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.recommendPerson-main .switching_form_box .fileInput-info {
+  font-size: 12px;
+  color: #64BBB2;
+  line-height: 30px;
+}
+.recommendPerson-main .switching_form_box .footer-submit-btn {
+  margin-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.recommendPerson-main .switching_form_box .footer-submit-btn .submitBtn {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  border-radius: 30px;
+  outline: none;
+  background-color: #31C2BF;
+  font-size: 16px;
+  letter-spacing: 10px;
+}
+.footer-submit-btn {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.footer-submit-btn .submitBtn {
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  border-radius: 30px;
+  outline: none;
+  background-color: #31C2BF;
+  font-size: 16px;
+  letter-spacing: 10px;
+}
+@media (min-width: 769px) {
+  .header-recommendPerson {
+    box-sizing: border-box;
+  }
+}
